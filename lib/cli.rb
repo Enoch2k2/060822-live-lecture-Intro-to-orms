@@ -73,7 +73,7 @@ class Cli
     puts "Create Pet"
     puts "---"
     pet_name = get_input("Enter the name of your Pet: ")
-    Pet.create(pet_name)
+    Pet.create(name: pet_name)
     puts "Creating pet..."
     sleep(1)
     puts "Pet Created"
@@ -103,7 +103,7 @@ class Cli
     index = input.to_i - 1
     pet = Pet.all[index]
     if pet
-      Pet.delete(pet.id)
+      pet.destroy
       puts "Deleting Pet..."
       sleep(1)
       puts "Pet deleted..."
